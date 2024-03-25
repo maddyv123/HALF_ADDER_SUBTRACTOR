@@ -34,6 +34,11 @@ Borrow = A’B
 Figure -02 HALF Subtractor
 
 **Truthtable**
+**HALF_ADDER:**
+![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/31f0f5f9-8956-4314-b002-d6c41ec28cd2)
+
+**HALF_SUBRACTOR:**
+![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/a887ca1e-201b-4a5e-8d01-4fecf7a76dcb)
 
 **Procedure**
 
@@ -49,21 +54,35 @@ Figure -02 HALF Subtractor
 
 
 **Program:**
+**HALF_ADDER:**
 ```
-module fulladder(x1,x2,f);
-input x1,x2;
-output f;
-assign f = (x1 & ~x2) | (x2 &~x1 );
+module half_adder(a,b,sum,carry);
+input a,b;
+output sum,carry; 
+assign sum = a^b;
+assign carry = a & b;
+endmodule
 
+```
+**HALF_SUBRACTOR:**
+```
+module halfsub_top(a,b,D,Bo);
+input a,b;
+output D,Bo; // Outputs sum and carry for half adder:Outputs difference D,Borrow Bo for half subtractor
+assign D = a ^ b;
+  assign Bo = ~a & b;
 endmodule
 ```
 Developed by:MATHAVAN V RegisterNumber:212223110026
 
 **RTL Schematic**
-![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/17f36077-037e-4bfe-8d26-8a3662ba04be)
+![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/e00949f3-f379-48cf-bdb7-6667895154c8)
 
 **Output/TIMING Waveform**
-![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/3b978f9a-c49e-42eb-87a4-72371e793d03)
+**HALF_ADDER:**
+![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/f53e4686-c0ed-42df-9fcb-eaad0ec4059e)
+**HALF_SUBRACTOR:**
+![image](https://github.com/maddyv123/HALF_ADDER_SUBTRACTOR/assets/153618028/9ae7333b-96b9-4365-aa7f-e4e2dcb153f4)
 
 **Result:**
-The output is verified successfully
+Thus implementation of Half Adder and Half subtractor circuit is running successfully.
